@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.kwon.dietmanager.StartActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="16pt"
+            android:paddingRight="16pt"
+            android:paddingTop="10pt">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <EditText
+                    android:id="@+id/editName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="이름"
+                    android:inputType="textPersonName"
+                    android:paddingTop="10pt" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/editAge"
+                        android:layout_width="79dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="나이"
+                        android:inputType="numberSigned"
+                        android:paddingTop="10pt"
+                        android:layout_weight="0.21" />
+
+                    <TextView
+                        android:id="@+id/txtAge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="세" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10pt">
+
+                    <EditText
+                        android:id="@+id/editWeight"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="현재 몸무게"
+                        android:inputType="numberSigned"
+                        android:layout_weight="0.09" />
+
+                    <TextView
+                        android:id="@+id/txtKg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="kg"
+                        android:textSize="8pt" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="146dp"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10pt">
+
+                    <EditText
+                        android:id="@+id/editHeight"
+                        android:layout_width="104dp"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="현재 신장"
+                        android:inputType="numberSigned"
+                        android:layout_weight="2.27" />
+
+                    <TextView
+                        android:id="@+id/txtCm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="cm"
+                        android:textSize="8pt" />
+                </LinearLayout>
+
+                <RadioGroup
+                    android:id="@+id/rdgGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingTop="10pt">
+
+                    <RadioButton
+                        android:id="@+id/rdMan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="남성" />
+
+                    <RadioButton
+                        android:id="@+id/rdWoman"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="여성" />
+                </RadioGroup>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10pt">
+
+                    <TextView
+                        android:id="@+id/txtActiveMass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:paddingRight="15pt"
+                        android:text="활동 정도"
+                        android:textSize="8pt" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <RadioButton
+                            android:id="@+id/rdVeryLittle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="매우 약간" />
+
+                        <RadioButton
+                            android:id="@+id/rdLittle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="약간" />
+
+                        <RadioButton
+                            android:id="@+id/rdMiddle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="중간" />
+
+                        <RadioButton
+                            android:id="@+id/rdALotOf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="많이" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnRegist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="10pt"
+                    android:text="정보등록" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

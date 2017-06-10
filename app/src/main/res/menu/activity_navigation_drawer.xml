@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="홈으로" />
+        <item
+            android:id="@+id/nav_dailyRecord"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="일일기록" />
+        <item
+            android:id="@+id/nav_mustRead"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="필독사항" />
+        <item
+            android:id="@+id/nav_foodCalorie"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="음식별 칼로리" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>

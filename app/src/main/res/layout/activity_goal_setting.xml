@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="10pt"
+    android:paddingLeft="10pt"
+    android:paddingRight="10pt"
+    android:orientation="vertical"
+    tools:context="com.example.kwon.dietmanager.GoalSettingActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:paddingTop="10pt"
+            android:id="@+id/editGoalWeight"
+            android:layout_width="294dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:hint="목표 몸무게"
+            android:layout_below="@+id/txtTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="2.00" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="8pt"
+            android:text="Kg"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:paddingTop="10pt"
+        android:id="@+id/editStartDate"
+        android:hint="시작일"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        android:layout_below="@+id/editGoalWeight"
+        android:layout_alignStart="@+id/editEndDate"/>
+
+    <EditText
+        android:paddingTop="10pt"
+        android:id="@+id/editEndDate"
+        android:hint="종료일"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberSigned"
+        android:layout_below="@+id/editGoalWeight"
+        android:layout_alignStart="@+id/editGoalWeight" />
+
+    <EditText
+        android:paddingTop="10pt"
+        android:id="@+id/editPromise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editEndDate"
+        android:layout_below="@+id/editEndDate"
+        android:lines="5"
+        android:maxLines="5"
+        android:minLines="0"
+        android:ems="10"
+        android:hint="다이어트 다짐"
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:paddingTop="10pt"
+        android:id="@+id/btnGoalSettingComplete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="목표 설정 완료"
+        android:layout_below="@+id/editPromise"
+        android:layout_alignEnd="@+id/editPromise" />
+
+</LinearLayout>

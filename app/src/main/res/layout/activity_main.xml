@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kwon.dietmanager.MainActivity"
+    android:background="@drawable/background"
+    tools:layout="@layout/fragment_home"
+    >
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="71dp"
+        android:textSize="15pt"
+        android:text="다이어트 매니저"
+        android:layout_marginEnd="67dp"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="400px"
+        android:layout_height="wrap_content"
+        android:text="다이어트 시작"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/txtTitle"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="172dp" />
+
+</RelativeLayout>
