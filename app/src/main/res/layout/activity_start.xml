@@ -112,6 +112,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:checked="true"
                         android:text="남성" />
 
                     <RadioButton
@@ -138,6 +139,7 @@
                         android:textSize="8pt" />
 
                     <RadioGroup
+                        android:id="@+id/rdgActiviteMass"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1">
@@ -147,6 +149,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:checked="true"
                             android:text="매우 약간" />
 
                         <RadioButton

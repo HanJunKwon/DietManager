@@ -47,7 +47,7 @@ public class HomeFragment extends Fragment {
             count=15;
 
 
-        // 그래프에 사용자의 15일간 몸무게 변화를 보여준다.
+        // 그래프에 사용자의 15일간 몸무게 변화를 추가
         for(int i=0; i<count; ++i){
             userWeight.add(new Entry(90.4f, i));
         }

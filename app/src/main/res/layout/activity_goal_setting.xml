@@ -42,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="date"
+        android:inputType="text"
         android:layout_below="@+id/editGoalWeight"
         android:layout_alignStart="@+id/editEndDate"/>
 
@@ -53,7 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="numberSigned"
+        android:inputType="text"
         android:layout_below="@+id/editGoalWeight"
         android:layout_alignStart="@+id/editGoalWeight" />
 
