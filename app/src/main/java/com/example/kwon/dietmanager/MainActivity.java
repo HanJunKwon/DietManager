@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myDB = openOrCreateDatabase("Info", MODE_PRIVATE, null);
+                myDB = openOrCreateDatabase("DietManager", MODE_PRIVATE, null);
                 Cursor cursor = myDB.rawQuery("select count(*) from sqlite_master where name='userInfo';", null);
                 int count = 0;
                 if(cursor.moveToFirst()){
@@ -54,10 +54,11 @@ public class MainActivity extends AppCompatActivity {
                 dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        // 확인을 누를 경우 모든 테이터 베이스 드랍
-                        myDB = openOrCreateDatabase("Info", MODE_PRIVATE, null);
+                        // 확인을 누를 경우 사용자 정보와 관련된 table 드랍
+                        myDB = openOrCreateDatabase("DietManager", MODE_PRIVATE, null);
                         myDB.execSQL("Drop table if exists userInfo");
-                        myDB.execSQL("Drop table if exists dailyInfo");
+                        myDB.execSQL("Drop table if exists dailyRecord");
+                        myDB.execSQL("Drop table if exists dailyExerciseRecord");
 
                         Toast.makeText(MainActivity.this, "정보가 초기화 되었습니다", Toast.LENGTH_LONG).show();
                     }

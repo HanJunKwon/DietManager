@@ -84,7 +84,10 @@ public class GoalSettingActivity extends AppCompatActivity {
                 goalWeight = Integer.parseInt(editGoalWeight.getText().toString());
                 promise = editPromise.getText().toString();
 
-                myDB = openOrCreateDatabase("Info", MODE_PRIVATE, null);
+
+                myDB = openOrCreateDatabase("DietManager", MODE_PRIVATE, null);
+
+                // 앱에서 사용자가 이용할 테이블들을 생성
                 myDB.execSQL("Create table userInfo ("+
                         "name text primary key, "+"age integer, "+"weight integer, "+
                         "height integer, "+"gender integer, "+"activiteMass integer, "+
@@ -92,6 +95,14 @@ public class GoalSettingActivity extends AppCompatActivity {
 
                 myDB.execSQL("Insert into userInfo (name, age, weight, height, gender, activiteMass, goalWeight, startDate, endDate, promise) values ('"+
                         name + "', '" + age + "', '" + weight+"', '" + height +"', '"+gender+"', '"+activiteMass+"', '"+goalWeight+"', '"+startDate+"', '"+endDate+"', '"+promise+"');");
+
+                myDB.execSQL("Create table dailyRecord(id integer primary key autoincrement, weight integer not null, date text not null);");
+                myDB.execSQL("Insert into dailyRecord(weight, date) values('"+
+                        weight+"', '"+startDate+"');");
+
+                myDB.execSQL("Create table dailyExerciseRecord ("+
+                        "id integer, exerciseName text, sets integer, number integer, " +
+                        "FOREIGN KEY(id) REFERENCES dailyRecord(id));");
 
                 Intent NavigationIntent = new Intent(GoalSettingActivity.this, NavigationActivity.class);
                 startActivity(NavigationIntent);

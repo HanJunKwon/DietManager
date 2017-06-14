@@ -51,7 +51,11 @@ public class MustReadAdapter extends BaseAdapter{
 
         MustReadItem item = getItem(position);
 
+        // 리스트 하나의 아이템에 대해서 설정
         txtName.setText(item.getName());
+
+        // 컨텐츠의 내용이 30글자 이상이라면 30글자 뒤로는 짤라내고 ...으로 표시한다.
+
         txtContent.setText(item.getContents());
 
         Log.v("알림","getView 마침");

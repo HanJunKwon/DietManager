@@ -4,8 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import com.example.kwon.dietmanager.DataClass.MustRead;
+import com.example.kwon.dietmanager.Item.MustReadItem;
 
 import java.util.ArrayList;
 
@@ -21,6 +20,13 @@ public class MustReadSQLiteOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        /*
+        SQLiteDatabase db = myDB.getReadalbeDatabase();
+        SQLiteDatabase db = myDB.getWriteableDatase();
+        둘 중에 하나가 실행되면 호출 되는 함수
+        반드시 여기에 해당 테이블이 존재하는지 확인하는 명령어를 적고 없으면 테이블을 만들어줘야한다.
+        adb shell로 테이블 만들어서 데이터넣고 해야하는데 이거는 나중에 설명
+        */
     }
 
     @Override
@@ -42,8 +48,8 @@ public class MustReadSQLiteOpenHelper extends SQLiteOpenHelper {
         return count;
     }
 
-    public ArrayList<MustRead> getMustRead(){
-        ArrayList<MustRead> mustReads = new ArrayList<MustRead>();
+    public ArrayList<MustReadItem> getMustRead(){
+        ArrayList<MustReadItem> mustReads = new ArrayList<MustReadItem>();
 
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -52,7 +58,7 @@ public class MustReadSQLiteOpenHelper extends SQLiteOpenHelper {
         if(cursor != null){
             if(cursor.moveToFirst()){
                 do{
-                    MustRead mustRead = new MustRead();
+                    MustReadItem mustRead = new MustReadItem();
                     mustRead.setId(cursor.getInt(0));
                     mustRead.setName(cursor.getString(1));
                     mustRead.setContents(cursor.getString(2));
@@ -60,7 +66,6 @@ public class MustReadSQLiteOpenHelper extends SQLiteOpenHelper {
                 }while(cursor.moveToNext());
             }
         }
-
         return mustReads;
     }
 }

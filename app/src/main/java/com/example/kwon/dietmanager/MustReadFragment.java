@@ -10,7 +10,7 @@ import android.support.v4.app.Fragment;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import com.example.kwon.dietmanager.Adapter.MustReadAdapter;
-import com.example.kwon.dietmanager.DataClass.MustRead;
+import com.example.kwon.dietmanager.Item.MustReadItem;
 import com.example.kwon.dietmanager.SQLiteOpenHelper.MustReadSQLiteOpenHelper;
 
 import java.util.ArrayList;
@@ -44,7 +44,7 @@ public class MustReadFragment extends Fragment {
 
         int count = myDB.getCount(); // table의 레코드 개수
         Log.v("알림", "카운트 : "+count);
-        ArrayList<MustRead> mustReads = myDB.getMustRead(); // table의 값
+        ArrayList<MustReadItem> mustReads = myDB.getMustRead();
 
         for(int i=0; i<count; ++i){
             Log.v("알림", "id:"+ mustReads.get(i).getId()+", 제목:"+mustReads.get(i).getName()+", 내용:"+mustReads.get(i).getContents());
