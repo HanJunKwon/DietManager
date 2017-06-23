@@ -22,6 +22,7 @@ public class MustReadFragment extends Fragment {
     MustReadSQLiteOpenHelper myDB;
     ListView listView;
     ArrayList<MustReadItem> mustReads;
+
     public MustReadFragment() {
         // Required empty public constructor
     }

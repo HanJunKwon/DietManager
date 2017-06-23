@@ -15,7 +15,7 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="필독사항" />
         <item
-            android:id="@+id/nav_foodCalorie"
+            android:id="@+id/nav_foodKcal"
             android:icon="@drawable/ic_menu_manage"
             android:title="음식별 칼로리" />
     </group>
