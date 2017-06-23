@@ -115,4 +115,12 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+
+    <string name="title1">"운동전 필독 사항"</string>
+    <string name="contents1">"운동 전에는 반드시 5분정도의 스트레칭을 해주고 운동을 시작한다.스트레칭을 하지 않은 상태에서하는 운동은 근육에 무리가 가고 운동의 효율을 떨어트린다."</string>
+
+    <string name="title2">"숫자에 연연하지마라"</string>
+    <string name="contents2">
+        "많은 사람들이 운동을 하면서 숫자에 연연한다. 다이어트를 할 때에도 몇분을 뛰었는지 몇칼로리를 "
+        "소모헀는지 몇kg인지, 몇 세트를 했고 몇 번 했는지를 신경쓰고 운동을 한다."</string>
 </resources>

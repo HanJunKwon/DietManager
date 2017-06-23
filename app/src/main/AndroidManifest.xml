@@ -26,7 +26,8 @@
             android:name=".NavigationActivity"
             android:label="@string/title_activity_navigation"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".StartActivity"></activity>
+        <activity android:name=".StartActivity" />
+        <activity android:name=".MustRead2Activity"></activity>
     </application>
 
 </manifest>

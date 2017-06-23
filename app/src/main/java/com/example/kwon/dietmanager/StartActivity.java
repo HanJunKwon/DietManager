@@ -18,7 +18,6 @@ public class StartActivity extends AppCompatActivity {
     int height;
     short gender; // 남자=0, 여자=1
     short activiteMass; // 매우 약간=0, 약간=1, 중간=2, 많이=3
-    SQLiteDatabase myDB;
 
     EditText editName, editAge, editWeigth, editHeight;
     RadioGroup rdgGender, rdgActiviteMass;

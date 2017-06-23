@@ -6,7 +6,7 @@ package com.example.kwon.dietmanager.Item;
 
 public class MustReadItem {
     private int id;
-    private String name;
+    private String title;
     private String contents;
 
     public int getId() {
@@ -17,12 +17,12 @@ public class MustReadItem {
         this.id = id;
     }
 
-    public String getName(){
-        return name;
+    public String getTitle(){
+        return title;
     }
 
-    public void setName(String name){
-        this.name = name;
+    public void setTitle(String title){
+        this.title = title;
     }
 
     public String getContents(){
