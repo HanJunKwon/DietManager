@@ -4,19 +4,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/apple"
             android:title="홈으로" />
         <item
             android:id="@+id/nav_dailyRecord"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/grape"
             android:title="일일기록" />
         <item
             android:id="@+id/nav_mustRead"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/kiwi"
             android:title="필독사항" />
         <item
             android:id="@+id/nav_foodKcal"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/pear"
             android:title="음식별 칼로리" />
     </group>
 

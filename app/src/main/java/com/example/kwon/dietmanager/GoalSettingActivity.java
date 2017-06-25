@@ -26,8 +26,8 @@ public class GoalSettingActivity extends AppCompatActivity {
     SQLiteDatabase myDB;
 
     // Start 액티비티에서 넘겨준 데이터를 저장하는 변수들
-    String name; // 사용자 이름
-    int age, weight, height; // 나이, 몸무게, 신장
+    String name,weight; // 사용자 이름, 몸무게
+    int age, height; // 나이, 신장
     short gender, activiteMass; // 성별, 활동량
 
     // GoalSetting액티비티에서 발생하는 데이터를 저장하는 변수들
@@ -48,7 +48,7 @@ public class GoalSettingActivity extends AppCompatActivity {
         Intent intent = getIntent();
         name = intent.getStringExtra("name");
         age = intent.getExtras().getInt("age"); // int형 전달 받을 때
-        weight = intent.getExtras().getInt("weight");
+        weight = intent.getExtras().getString("weight");
         height = intent.getExtras().getInt("height");
 
         editGoalWeight = (EditText)findViewById(R.id.editGoalWeight);
@@ -89,14 +89,14 @@ public class GoalSettingActivity extends AppCompatActivity {
 
                 // 앱에서 사용자가 이용할 테이블들을 생성
                 myDB.execSQL("Create table userInfo ("+
-                        "name text primary key, "+"age integer, "+"weight integer, "+
+                        "name text primary key, "+"age integer, "+"weight text, "+
                         "height integer, "+"gender integer, "+"activiteMass integer, "+
                         "goalWeight integer, "+"startDate text, "+"endDate text, "+"promise text);");
 
                 myDB.execSQL("Insert into userInfo (name, age, weight, height, gender, activiteMass, goalWeight, startDate, endDate, promise) values ('"+
                         name + "', '" + age + "', '" + weight+"', '" + height +"', '"+gender+"', '"+activiteMass+"', '"+goalWeight+"', '"+startDate+"', '"+endDate+"', '"+promise+"');");
 
-                myDB.execSQL("Create table dailyRecord(id integer primary key autoincrement, weight integer not null, date text not null);");
+                myDB.execSQL("Create table dailyRecord(id integer primary key autoincrement, weight text not null, date text not null);");
                 myDB.execSQL("Insert into dailyRecord(weight, date) values('"+
                         weight+"', '"+startDate+"');");
 

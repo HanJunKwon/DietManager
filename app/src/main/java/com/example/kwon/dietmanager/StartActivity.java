@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class StartActivity extends AppCompatActivity {
     String name;
     int age;
-    int weight;
+    String weight;
     int height;
     short gender; // 남자=0, 여자=1
     short activiteMass; // 매우 약간=0, 약간=1, 중간=2, 많이=3
@@ -80,7 +80,7 @@ public class StartActivity extends AppCompatActivity {
                 // GoalSetting 액티비티로 값을 전달하기 위해서 사용자가 입력한 값을 가져온다.
                 name = editName.getText().toString();
                 age = Integer.parseInt(editAge.getText().toString());
-                weight = Integer.parseInt(editWeigth.getText().toString());
+                weight = editWeigth.getText().toString();
                 height = Integer.parseInt(editHeight.getText().toString());
 
                 // 사용자가 입력한 정보를 GoalSetting 액티비티로 전달한다.
