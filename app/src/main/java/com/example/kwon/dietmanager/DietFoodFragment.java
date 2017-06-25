@@ -48,8 +48,9 @@ public class DietFoodFragment extends Fragment {
         img.add(R.drawable.ic_beansproutsbibimnoodles);
         img.add(R.drawable.ic_sweetpumkinsalad);
 
-        myDB = new DietFoodSQLiteOpenHelper(getActivity(), "DietFood", null, 10);
+        myDB = new DietFoodSQLiteOpenHelper(getActivity(), "DietFood", null, 12);
         myDB.updateDietFoodImage(img);
+
         // listView 아이템 클릭 이벤트
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
