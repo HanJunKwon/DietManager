@@ -54,7 +54,7 @@ public class MustReadAdapter extends BaseAdapter{
         TextView txtName = (TextView)convertView.findViewById(R.id.txtName);
         TextView txtContent = (TextView)convertView.findViewById(R.id.txtContents);
 
-        final MustReadItem item = getItem(position);
+        MustReadItem item = getItem(position);
 
         // 리스트 하나의 아이템에 대해서 설정
         txtName.setText(item.getTitle());

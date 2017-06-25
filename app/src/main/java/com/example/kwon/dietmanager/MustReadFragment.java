@@ -43,7 +43,6 @@ public class MustReadFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        Log.v("알림" , "dataSetting이전");
         // 아이템 추가 및 어댑터 등록
         dataSetting();
 
@@ -51,16 +50,12 @@ public class MustReadFragment extends Fragment {
     }
 
     private void dataSetting(){
-        Log.v("알림", "데이터 세팅 초기");
         MustReadAdapter adapter = new MustReadAdapter(); // 어댑터 지정
         myDB = new MustReadSQLiteOpenHelper(getActivity(), "MustRead", null, 2); // 데이터 베이스 연결
 
         int count = myDB.getCount(); // table의 레코드 개수
-        Log.v("알림", "카운트 : "+count);
         mustReads = myDB.getMustReads();
-
         for(int i=0; i<count; ++i){
-            Log.v("알림", "id:"+ mustReads.get(i).getId()+", 제목:"+mustReads.get(i).getTitle()+", 내용:"+mustReads.get(i).getContents());
             adapter.addItem(mustReads.get(i).getId(), mustReads.get(i).getTitle(), mustReads.get(i).getContents());
         }
 
