@@ -73,6 +73,23 @@ public class HomeSQLiteOpenHelper extends SQLiteOpenHelper {
         }
 
         return dailyReccordItems;
+    }
 
+    public void InsertDailyRecord(String weight, String today){
+        SQLiteDatabase db = getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("select count(*) from dailyRecord where date="+today+";", null);
+
+        if(cursor!=null){
+            cursor.moveToFirst();
+            int count = cursor.getInt(0);
+            db = getWritableDatabase();
+            if(count > 0){
+                db.execSQL("update set weight='"+weight+"' where date='"+today+"';");
+            }
+            else{
+                db.execSQL("Insert into DailyRecord(weight, date) values('"+weight+"', '"+today+"');");
+            }
+        }
     }
 }

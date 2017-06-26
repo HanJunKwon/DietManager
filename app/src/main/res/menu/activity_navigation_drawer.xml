@@ -7,10 +7,6 @@
             android:icon="@drawable/apple"
             android:title="홈으로" />
         <item
-            android:id="@+id/nav_dailyRecord"
-            android:icon="@drawable/grape"
-            android:title="일일기록" />
-        <item
             android:id="@+id/nav_mustRead"
             android:icon="@drawable/kiwi"
             android:title="필독사항" />
@@ -19,18 +15,5 @@
             android:icon="@drawable/pear"
             android:title="음식별 칼로리" />
     </group>
-
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
-        </menu>
-    </item>
 
 </menu>

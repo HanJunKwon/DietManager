@@ -86,9 +86,7 @@ public class NavigationActivity extends AppCompatActivity
             // ** 프레그먼트를 사용하려면 프래그먼트.java 파일에서
             // import android.support.Fragment; 지우고
             // import import android.support.v4.app.Fragment; 해줘야한다.
-        } else if (id == R.id.nav_dailyRecord) {
-            fragment = new DailyRecordFragment();
-        } else if (id == R.id.nav_mustRead) {
+        }  else if (id == R.id.nav_mustRead) {
             fragment = new MustReadFragment();
         } else if (id == R.id.nav_foodKcal) {
             fragment = new DietFoodFragment();

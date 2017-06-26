@@ -93,6 +93,22 @@
                     </LinearLayout>
 
                 </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edtWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:ems="10"
+                    android:inputType="numberSigned"
+                    android:hint="오늘의 몸무게"/>
+
+                <Button
+                    android:id="@+id/btnRegist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="몸무게 등록" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

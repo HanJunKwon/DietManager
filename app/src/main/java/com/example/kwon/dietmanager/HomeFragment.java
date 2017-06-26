@@ -11,11 +11,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.app.Fragment;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.disklrucache.DiskLruCache;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.example.kwon.dietmanager.Item.DailyReccordItem;
 import com.example.kwon.dietmanager.Item.UserInfoItem;
@@ -33,12 +36,15 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public class HomeFragment extends Fragment {
     HomeSQLiteOpenHelper myDB;
     UserInfoItem userInfoItem;
     TextView txtProgress,txtKcalInfomation;
     ImageView imageView;
+    Button btnRegist;
+    EditText edtWeight;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -47,7 +53,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        final View view = inflater.inflate(R.layout.fragment_home, container, false);
         myDB = new HomeSQLiteOpenHelper(getActivity(), "DietManager", null, 1);
         userInfoItem = myDB.getUserInfo(); // 유저 정보는 가져온다.
         ArrayList<DailyReccordItem> dailyReccordItems = myDB.getDailyRecordItems();
@@ -115,6 +121,7 @@ public class HomeFragment extends Fragment {
 
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         int percent = 0;
+        Calendar nowCal;
         try{
             Date startDate = new Date();
             Date endDate = new Date();
@@ -145,10 +152,11 @@ public class HomeFragment extends Fragment {
             String getTime = df2.format(date);
             date = df2.parse(getTime);
 
-            Calendar nowCal = Calendar.getInstance();
+            nowCal = Calendar.getInstance();
 
             nowCal.setTime(date);
 
+            Log.v("nowCal",""+nowCal);
             diffMillis = nowCal.getTimeInMillis() - startCal.getTimeInMillis();
             diff = (int)(diffMillis/(24*60*60*1000));
             Log.v("현재 일과 시작날짜 차이", ""+diff);
@@ -189,7 +197,21 @@ public class HomeFragment extends Fragment {
                 kcal*=1.725;
                 break;
         }
-        txtKcalInfomation.setText(kcal+"Kcal");
+        txtKcalInfomation.setText(String.format("%.2f", kcal)+"Kcal");
+
+        btnRegist = (Button)view.findViewById(R.id.btnRegist);
+        btnRegist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edtWeight = (EditText)view.findViewById(R.id.edtWeight);
+                String weight = edtWeight.getText().toString();
+                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd", Locale.KOREA);
+                String today = df.format(new Date());
+                myDB.InsertDailyRecord(weight, today);
+            }
+        });
+
+
         return view;
     }
 }
